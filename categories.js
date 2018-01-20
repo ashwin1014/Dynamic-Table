@@ -60,48 +60,6 @@ var data = [{
         ],
         CreatedById: 3,
         IsActive: true
-    },
-    {
-        CategoryId: 4,
-        CategoryTexts: [{
-                LanguageId: 1,
-                Description: "Arcu.",
-                CreatedById: 10
-            },
-            {
-                LanguageId: 2,
-                Description: "Nec?",
-                CreatedById: 11
-            },
-            {
-                LanguageId: 3,
-                Description: "Fusce.",
-                CreatedById: 12
-            }
-        ],
-        CreatedById: 4,
-        IsActive: true
-    },
-    {
-        CategoryId: 5,
-        CategoryTexts: [{
-                LanguageId: 1,
-                Description: "Parturient.",
-                CreatedById: 13
-            },
-            {
-                LanguageId: 2,
-                Description: "Fermentum.",
-                CreatedById: 14
-            },
-            {
-                LanguageId: 3,
-                Description: "Urna.",
-                CreatedById: 15
-            }
-        ],
-        CreatedById: 5,
-        IsActive: true
     }
 ];
 
