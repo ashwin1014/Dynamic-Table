@@ -1,0 +1,19 @@
+{
+  "name": "dynamic-table",
+  "version": "1.0.0",
+  "description": "table  with multiple functionalities",
+  "main": "categories.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashwin1014/Dynamic-Table.git"
+  },
+  "author": "Ashwin Bordoloi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashwin1014/Dynamic-Table/issues"
+  },
+  "homepage": "https://github.com/ashwin1014/Dynamic-Table#readme"
+}

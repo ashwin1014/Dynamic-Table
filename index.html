@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Dynamic Table</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+    </nav>
+    <div class="container">
+        <h1>Dynamic Table</h1>
+        <hr>
+
+        <br/>
+        <br/>
+        <div class="col-md-12 col-lg-12 column">
+            <table class="table table-bordered table-condensed" id="tab_logic">
+                <thead>
+                    <tr>
+                        <th class="text-center colWidth3percent">
+                        </th>
+                        <th class="text-center englishCategory">
+                            English
+                        </th>
+                        <th class="text-center spanishCategory">
+                            Spanish
+                        </th>
+                        <th class="text-center frenchCategory">
+                            French
+                        </th>
+                        <th class="text-center col-md-1 col-lg-1 col-sm-1">
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-sm borderRadiusZero" id="btnSpanish" onclick="hideClassificationSpanish()">ES</button>
+                                <button class="btn btn-primary btn-sm borderRadiusZero" id="btnFrench" onclick="hideClassificationFrench()">FR</button>
+                            </div>
+                        </th>
+                        <th class="dropdown colWidth3percent">
+                            <button class="btn-link dropdown-toggle marginZero" type="button" data-toggle="dropdown">
+                                  <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Portuguese</a></li>
+                                <li><a href="#">Mandarin</a></li>
+                                <li><a href="#">Russian</a></li>
+                            </ul>
+                        </th>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center addColumn">
+                            <a id="add_row" class="btn text-center"><i  class="fa fa-2x fa-plus-circle addColumn" aria-hidden="true" onclick="addClassificationRow()"></i></a>
+                        </td>
+                        <td>
+                            <input type="text" placeholder='Enter text for English' class="form-control maxWidth100 borderRadiusZero" id="engText" required/>
+                        </td>
+                        <td class="spanishCategory">
+                            <input type="text" placeholder='Enter text for Spanish' class="form-control maxWidth100 borderRadiusZero" id="esText" />
+                        </td>
+                        <td class="frenchCategory">
+                            <input type="text " placeholder='Enter text for French' class="form-control maxWidth100 borderRadiusZero" id="frText" />
+                        </td>
+                        <td></td>
+                        <td class="no-border"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a class="pull-right btn btn-default borderRadiusZero" onclick="deleteClassificationRow()">Delete Row</a>
+    </div>
+    <!--container div-->
+    <!-- scripts-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js "></script>
+    <script src="script.js "></script>
+    <script src="categories.js"></script>
+</body>
+
+</html>
