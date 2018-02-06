@@ -69,7 +69,7 @@ var y = 100;
 
 data.forEach(function(e) {
     var column =
-        '<tr id="addr' + x + '">' +
+        '<tr id="addr' + x + '" class="category">' +
         '<td class="rowCheck"></td>' +
         '<td class="englishCategory rowCheck backgroundWhite"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' +
         e.CategoryTexts[0].Description + '"></td>' +

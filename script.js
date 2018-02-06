@@ -18,22 +18,53 @@ $(document).ready(function() {
 var x = 1;
 var y = 1;
 
+
+function getTableData() {
+  return $("tr.category").map((index, element)=>{
+  	let categoryObject = {}
+  	categoryObject["english"]= $(element).find(".englishCategory input").val()
+  	categoryObject["spanish"]= $(element).find(".spanishCategory input").val()
+  	categoryObject["french"]= $(element).find(".frenchCategory input").val()
+  	return categoryObject
+  })
+}
+
+function DuplicatesExist() {
+  var allData = getTableData()
+
+  var noDuplicates = allData.toArray().every( data => {
+    return data.english != $("#engText").val()
+  })
+  return noDuplicates != true
+}
+
 function addClassificationRow() {
     //first row created with id addr1
-    var row = '<tr id="addr' + (x) + '">' +
-        '<td class="rowCheck"></td>' +
-        '<td class="englishCategory rowCheck backgroundWhite"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + $("#engText").val() + '"></td>' +
-        '<td class="spanishCategory rowCheck backgroundWhite"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + $("#esText").val() + '"></td>' +
-        '<td class="frenchCategory  rowCheck backgroundWhite ColumnDisplayNone"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + $("#frText").val() + '"></td>' +
-        '<td class="text-center backgroundWhite toggleColumn"><div class="toggleSwitch"><input id="myonoffswitch' + (y + 1) + '" type="checkbox"  name="toggleSwitch' + (y + 1) + '" class="toggleSwitch-checkbox"' + 'checked' + '>' +
-        '<label class="toggleSwitch-label" for="myonoffswitch' + (y + 1) + '">' +
-        '<span class="toggleSwitch-inner"></span><span class="toggleSwitch-switch"></span></label></div></td>' +
-        '<td class="no-border"></td></tr>';
-    $('#tab_logic tbody').append(row);
-    x++;
-    y++;
+    addData($("#engText").val(),$("#esText").val(), $("#frText").val())
     $('#engText, #esText, #frText').val(''); //clear fields
-    $(".addColumn").addClass("isDisabled"); // disable add button
+    $(".addColumn").addClass("isDisabled");
+
+}
+
+function addData(englishText, spanishText, frenchText) {
+  if(DuplicatesExist()){
+    alert("Fuck Duplicates")
+    return;
+  }
+
+  var row = '<tr id="addr' + (x) + '" class="category">' +
+      '<td class="rowCheck"></td>' +
+      '<td class="englishCategory rowCheck backgroundWhite"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + englishText + '"></td>' +
+      '<td class="spanishCategory rowCheck backgroundWhite"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + spanishText + '"></td>' +
+      '<td class="frenchCategory  rowCheck backgroundWhite ColumnDisplayNone"><input class = "form-control no-border input-md inputCheck maxWidth100 borderRadiusZero" type = "text" value = "' + frenchText + '"></td>' +
+      '<td class="text-center backgroundWhite toggleColumn"><div class="toggleSwitch"><input id="myonoffswitch' + (y + 1) + '" type="checkbox"  name="toggleSwitch' + (y + 1) + '" class="toggleSwitch-checkbox"' + 'checked' + '>' +
+      '<label class="toggleSwitch-label" for="myonoffswitch' + (y + 1) + '">' +
+      '<span class="toggleSwitch-inner"></span><span class="toggleSwitch-switch"></span></label></div></td>' +
+      '<td class="no-border"></td></tr>';
+  $('#tab_logic tbody').append(row);
+  x++;
+  y++;
+   // disable add button
 }
 
 //delete row
