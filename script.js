@@ -48,7 +48,7 @@ function addClassificationRow() {
 
 function addData(englishText, spanishText, frenchText) {
   if(DuplicatesExist()){
-    alert("Fuck Duplicates")
+    alert("Duplicate Text Found")
     return;
   }
 
